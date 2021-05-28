@@ -57,12 +57,11 @@ There are multiple ways to set language in HTML
 
 Confused? Let me make that simple. Imagine that, every web page is a document and every element( be it text or image or table) inside that webpage is stored in that document as an object in a tree format, which can be manipulated later with a scripting language such as JavaScript. \
 <img src="assets/dom1.png" alt="Dom" />
-
+Now, when a web page is loaded, the browser creates such a document every time which is called, Document Object Model (DOM) of the page.\
+The DOM represents the document as nodes and objects so that programs can change the document structure, style, and content. In that hat way, programming languages connect to the webpage.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
-Now, when a web page is loaded, the browser creates such a document every time which is called, Document Object Model (DOM) of the page.\
-The DOM represents the document as nodes and objects so that programs can change the document structure, style, and content. In that hat way, programming languages connect to the webpage.\
 ## Q. ***How does the browser rendering engine work?***
 
 In order to render content the browser has to go through a series of steps:
