@@ -38,7 +38,7 @@ There are multiple ways to set language in HTML
 *   By setting accept-language in headers for list of language that a page accept
 *   Setting lang attribute in html tag
 
-**Example:*
+**Example:**
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -53,17 +53,16 @@ There are multiple ways to set language in HTML
 
 ## Q. ***What is the DOM? How does the DOM work?*** 
 
-The DOM (Document Object Model) is a cross-platform API that treats HTML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
+***The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.***
 
-* When a browser loads web page, then browser create the document object model for the page.
+Confused? Let me make that simple. Imagine that, every web page is a document and every element( be it text or image or table) inside that webpage is stored in that document as an object in a tree format, which can be manipulated later with a scripting language such as JavaScript. \
+<img src="assets/dom1.png" alt="Dom" />
 
-* The DOM was designed to be independent of any particular programming language, making the structural representation of the document available from a single, consistent API.
-
-* document.getElementById() and document.querySelector() are common functions for selecting DOM nodes.
-
-* Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
-
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+Now, when a web page is loaded, the browser creates such a document every time which is called, Document Object Model (DOM) of the page.\
+The DOM represents the document as nodes and objects so that programs can change the document structure, style, and content. In that hat way, programming languages connect to the webpage.\
 ## Q. ***How does the browser rendering engine work?***
 
 In order to render content the browser has to go through a series of steps:
