@@ -15,7 +15,8 @@
 | 05.|[How does the browser rendering engine work?](#q-how-does-the-browser-rendering-engine-work)|
 | 06.|[What does a `<DOCTYPE html>` do?](#q-what-does-a-doctype-html-do)|
 | 07.|[What happens when DOCTYPE is not given?](#q-what-happens-when-doctype-is-not-given)|
-
+| 08.|[What are the building blocks of HTML5?](#q-what-are-the-building-blocks-of-html5)|
+| 09.|[Describe the difference between a `cookie`, `sessionStorage` and `localStorage`?](#q-describe-the-difference-between-a-cookie-sessionstorage-and-localstorage)
 
 <br/>
 
@@ -82,13 +83,57 @@ In order to render content the browser has to go through a series of steps:
 
 ## Q. ***What does a `<DOCTYPE html>` do?***
 
-A DOCTYPE is always associated to a `DTD` ( **Document Type Definition** ). A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document supposedly respects (i.e. this document respects the HTML DTD). For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects. 
-
-Once a user agent has recognized a correct DOCTYPE, it will trigger the `no-quirks mode` matching this DOCTYPE forreading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the `quirks mode`.
+Doctype is the abbreviation for the “Document type”. The very first line in every web document should contain a <!DOCTYPE html> declaration. \
+The purpose of DOCTYPE is to tell the browser what type of HTML you are writing. It is not valid to omit the DOCTYPE. There is no “Standard” format. The browser will just try to parse HTML as best it can. But not all elements will be displayed correctly. DOCTYPE is a required part of all HTML documents.\
+To render a HTML4.01 document, use this code at the very top of your document:
+```HTML
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd">
+```
+To render a HTML5 document, include this code instead:\
+<!doctype html>\
+The Doctype declaration informs the web browser about the type and version of HTML used in building the web document (e.g. HTML5, HTML4.0, XHTML1.0)\
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Q. ***What happens when DOCTYPE is not given?***
 
 The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow the **W3C specifications**. In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are the building blocks of HTML5?***
+
+* **Semantics**: allowing you to describe more precisely what your content is.
+* **Connectivity**: allowing you to communicate with the server in new and innovative ways.
+* **Offline and storage**: allowing webpages to store data on the client-side locally and operate offline more efficiently.
+* **Multimedia**: making video and audio first-class citizens in the Open Web.
+* **2D/3D graphics and effects**: allowing a much more diverse range of presentation options.
+* **Performance and integration**: providing greater speed optimization and better usage of computer hardware.
+* **Device access**: allowing for the usage of various input and output devices.
+* **Styling**: letting authors write more sophisticated themes.
+
+## Q. ***Describe the difference between a `cookie`, `sessionStorage` and `localStorage`?***
+
+**localStorage:** localStorage is a way to store data on the client’s computer. It allows the saving of key/value pairs in a web browser and it stores data with no expiration date. localStorage can only be accessed via JavaScript, and HTML5. However, the user has the ability to clear the browser data/cache to erase all localStorage data.
+
+**SessionStorage:**  stores data only for a session, meaning that the data is stored until the browser (or tab) is closed.
+
+**cookie:** Stores data that has to be sent back to the server with subsequent XHR requests. Its expiration varies based on the type and the expiration duration can be set from either server-side or client-side .
+
+|                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
+| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
+| Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
+| Expiry                                 | Manually set                                             | Forever        | On tab close     |
+| Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
+| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
+| Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
+| Accessibility                          | Any window                                               | Any window     | Same tab         |
+
+
+*Note: If the user decides to clear browsing data via whatever mechanism provided by the browser, this will clear out any `cookie`, `localStorage`, or `sessionStorage` stored. It's important to keep this in mind when designing for local persistance, especially when comparing to alternatives such as server side storing in a database or similar (which of course will persist despite user actions).*
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
